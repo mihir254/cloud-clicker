@@ -41,6 +41,8 @@ Given the requirement to store clicks persistently and provide quick lookups, a 
 
 Given the application's goals, **reliability**, **accuracy**, and user **trust** were prioritized over providing a fast click user experience.
 
+Another way for handling this is to employ a message queue, using services like RabbitMQ, where you are capturing the event from the frontend, pushing the request to the queue and while the requests are handled by the server in FIFO manner, the frontend is continuously listening to job completion notifications. Given the constraints of this project, I thought it was best to start with the "Accurate Feedback" approach and later grow into other solutions if required.
+
 #### Logging and Monitoring
 
 **Logging**:
